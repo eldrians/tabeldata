@@ -1,1 +1,28 @@
-<p>home works!</p>
+<div class="grid grid-cols-3 gap-4">
+  <div
+    *ngFor="let product of productList"
+    class="border border-slate-500 p-6 rounded-md"
+  >
+    <div>
+      <img
+        [src]="product.productImageUrl"
+        [alt]="product.productName"
+        class="w-20 h-20"
+      />
+    </div>
+    <div class="my-4 border-y border-slate-500 py-1">
+      <h5>
+        {{ product.productName }}
+      </h5>
+      <p>
+        {{ product.productPrice }}
+      </p>
+    </div>
+    <button (click)="addItemToCart(product.productId)">
+      <span
+        class="py-2 px-3 text-xs bg-slate-700 hover:bg-slate-800 text-slate-50 rounded-md shadow-md"
+        >add to cart
+      </span>
+    </button>
+  </div>
+</div>

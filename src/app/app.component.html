@@ -1,3 +1,19 @@
-<div class="text-4xl">
-  Hi 
-</div>
+<header>
+  <nav
+    class="w-full flex flex-row justify-between items-center px-20 py-6 text-xl shadow-xl"
+  >
+    <div class="font-extrabold text-slate-700">AXSALE</div>
+    <div>
+      <ul class="flex flex-row gap-6">
+        <li><a href="/shop">Shop</a></li>
+        <li><a href="/cart">Cart</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<section id="product" class="px-20 py-12">
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+</section>

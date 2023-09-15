@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from './services/product.service';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  selector: 'app-cart',
+  templateUrl: './cart.component.html',
+  styleUrls: ['./cart.component.css'],
 })
-export class AppComponent implements OnInit {
-  title = 'tabel-data';
+export class CartComponent implements OnInit {
   cartProducts: any[] = [];
   constructor(private productService: ProductService) {
     this.productService.cartAddedSubject.subscribe((res) => {
@@ -21,7 +20,6 @@ export class AppComponent implements OnInit {
 
   loadCart() {
     this.productService.getCartItemsByCustId(1).subscribe((res: any) => {
-      console.log(res.data);
       this.cartProducts = res.data;
     });
   }

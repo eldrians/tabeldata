@@ -1,0 +1,23 @@
+<div>
+  <h2>Axel : {{ cartProducts.length }}</h2>
+  <div *ngFor="let cart of cartProducts">
+    <div>
+      <img
+        [src]="cart.productImageUrl"
+        [alt]="cart.productName"
+        class="w-20 h-20"
+      />
+    </div>
+    <div>
+      <h5>
+        {{ cart.productName }}
+      </h5>
+      <p>
+        {{ cart.quantity }}
+      </p>
+      <p>
+        {{ cart.productPrice }}
+      </p>
+    </div>
+  </div>
+</div>
